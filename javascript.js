@@ -175,6 +175,15 @@ should be detected.
 I have provided some string variables to test your function with.
 ******************************************************************************/
 
+const greetings = [
+  "Hello, how are you today?",
+  "Diciamo ciao prima di andare!",
+  "Salut, ça va bien?",
+  "Kannst du mich hören? Hallo!",
+  "Nos saludamos con un alegre hola.",
+  "Ona pomachała i powiedziała cześć z uśmiechem."
+];
+
 
 /******************************************************************************
 5.
