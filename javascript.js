@@ -180,8 +180,10 @@ const greetings = [
   "Diciamo ciao prima di andare!",
   "Salut, ça va bien?",
   "Kannst du mich hören? Hallo!",
+  "Hva er regex?",
   "Nos saludamos con un alegre hola.",
-  "Ona pomachała i powiedziała cześć z uśmiechem."
+  "Ona pomachała i powiedziała cześć z uśmiechem.",
+  "Good afternoon gentlemen!"
 ];
 
 
