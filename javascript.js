@@ -40,60 +40,84 @@ skip Otto!
 const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
 
 const people = [
-	{
-		name: "Thomas",
-		male: true,
-		age: 23,
-		hobbies: ["cycling", "football", "pool"]
-	},
-	{
-		name: "Susan",
-		male: false,
-		age: 26,
-		hobbies: ["jogging", "travelling", "dancing"]
-	},
-	{
-		name: "Monica",
-		male: false,
-		age: 21,
-		hobbies: ["skateboarding", "guitar", "concerts"]
-	},
-	{
-		name: "Avery",
-		male: true,
-		age: 28,
-		hobbies: ["writing", "games", "memes"]
-	},
-	{
-		name: "Phillip",
-		male: true,
-		age: 24,
-		hobbies: ["boxing", "wrestling", "mma"]
-	},
-	{
-		name: "Otto",
-		male: true,
-		age: 36,
-		hobbies: ["movies", "cinema", "music"]
-	},
-	{
-		name: "Annabelle",
-		male: false,
-		age: 30,
-		hobbies: ["makeup", "fashion", "shopping"]
-	},
-	{
-		name: "Cathy",
-		male: false,
-		age: 18,
-		hobbies: ["design", "drawing", "css"]
-	}
+  {
+    name: "Thomas",
+    male: true,
+    age: 23,
+    hobbies: ["cycling", "football", "pool"],
+  },
+  {
+    name: "Susan",
+    male: false,
+    age: 26,
+    hobbies: ["jogging", "travelling", "dancing"],
+  },
+  {
+    name: "Monica",
+    male: false,
+    age: 21,
+    hobbies: ["skateboarding", "guitar", "concerts"],
+  },
+  {
+    name: "Avery",
+    male: true,
+    age: 28,
+    hobbies: ["writing", "games", "memes"],
+  },
+  {
+    name: "Phillip",
+    male: true,
+    age: 24,
+    hobbies: ["boxing", "wrestling", "mma"],
+  },
+  {
+    name: "Otto",
+    male: true,
+    age: 36,
+    hobbies: ["movies", "cinema", "music"],
+  },
+  {
+    name: "Annabelle",
+    male: false,
+    age: 30,
+    hobbies: ["makeup", "fashion", "shopping"],
+  },
+  {
+    name: "Cathy",
+    male: false,
+    age: 18,
+    hobbies: ["design", "drawing", "css"],
+  },
 ];
-let combinedAge = 0;
 
 //your code here
 
-let averageAge = 0;
+let combinedAge = 0;
+
+for (let i = 0; i < people.length; i++) {
+  combinedAge += people[i].age;
+  people[i].hobbies.unshift("coding");
+  // people[i].hobbies.shift("coding");
+  people[i].title = people[i].male ? "Mr" : "Ms";
+  people[i].age += 2;
+  // people[i].age += combinedAge[i].age;
+  // combinedAge += people[i].age;
+  if (people[i].name === "Otto") {
+    continue;
+  }
+
+  const randomCities = cities[Math.floor(Math.random() * cities.length)];
+
+  people[i].city = randomCities;
+}
+
+// let combinedAge = 0;
+// let averageAge = 0;
+let averageAge = combinedAge / people.length;
+
+console.log(people);
+console.log(averageAge);
+console.log(combinedAge);
 
 /******************************************************************************
 2.
@@ -117,7 +141,28 @@ should have.
 diceRoller(5, 20) should return an array of 5 random numbers ranging from 1-20 
 ******************************************************************************/
 
+//
+//
+const diceRoll = (arrayLength) => {
+  const array = [];
+  for (let i = 0; i < arrayLength; i++) {
+    const randomNumber = Math.ceil(Math.random() * 6);
+    array.push(randomNumber);
+  }
+  return array;
+};
 
+const diceRoller = diceRoll(6);
+
+console.log(diceRoller);
+//
+// I tried using only a function to get this done but could not figure it out, searched
+// chatgpt but whatever he wrote i didn't fully understand.
+
+// const diceRoller = (num) => {
+// return Array.from({ length: num }, () => Math.floor(Math.random() * 6) + 1);
+
+//
 /******************************************************************************
 3.
 
@@ -142,6 +187,17 @@ should return:
 "this text needs to be cleaned up"
 ******************************************************************************/
 
+function cleanUp(arrayStrings) {
+  const cleanedUp = [];
+  for (let cleanUp of arrayStrings) {
+    cleanedUp.push(cleanUp.trim().toLowerCase());
+  }
+  return cleanedUp.join(" ");
+}
+const strings = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"];
+const result = cleanUp(strings);
+
+console.log(result);
 
 /******************************************************************************
 4.
@@ -183,9 +239,8 @@ const greetings = [
   "Hva er regex?",
   "Nos saludamos con un alegre hola.",
   "Ona pomachała i powiedziała cześć z uśmiechem.",
-  "Good afternoon gentlemen!"
+  "Good afternoon gentlemen!",
 ];
-
 
 /******************************************************************************
 5.
@@ -217,5 +272,5 @@ should return "whao is ohe ptino tf ohis?"
 ******************************************************************************/
 
 function doubleSwap(string, charA, charB) {
-	//your code here
+  //your code here
 }
